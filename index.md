@@ -1,8 +1,6 @@
-<img src="https://juicelang.org/logo" alt="juice logo" height="70">
-
 # The *juice* Programming Language Documentation
 
-This repository contains the documentation of the *juice* programing language that can be viewed on its [website](https://juicelang.org/docs).
+Here you can find the official documentation of the *juice* programming language.  
 
 It is subdivided into the following categories:
 
