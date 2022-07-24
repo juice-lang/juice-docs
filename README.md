@@ -2,7 +2,7 @@
 
 # The *juice* Programming Language Documentation
 
-This repository contains the documentation of the *juice* programing language that can be viewed on its [website](https://juicelang.org/docs).
+This repository contains the documentation of the *juice* programming language that can be viewed on its [website](https://juicelang.org/docs).
 
 It is subdivided into the following categories:
 
