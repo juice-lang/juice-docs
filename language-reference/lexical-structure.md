@@ -52,11 +52,11 @@ null_character = ? U+0000 ?;
 
 ## Identifiers
 
-Identifiers are used for the names of types, functions, and variables. The tokens begin with an `_` or with a letter from `A` through `Z` or `a` through `z`. In addition to these characters, the next identifier characters are allowed to contain the digits from `0` through `9`.
+Identifiers are used for the names of types, functions, and variables. The tokens begin with an underscore (`_`) or with a letter from `A` through `Z` or `a` through `z`. In addition to these characters, the next identifier characters are allowed to contain the digits from `0` through `9`.
 
 If you have to use an identifier that already is a reserved [keyword](#keywords), you can escape it using backticks like so: `` `class` ``.
 
-#### Grammar of  an Identifier
+#### Grammar of an Identifier
 
 ```ebnf
 identifier = identifier_text
@@ -104,7 +104,7 @@ Here is a list containing all of *juice*'s keywords:
 
 ## Literals
 
-Literals represent the value of a type in the source code. There are several different types of literals in *juice* that all have a default type they infer as, but many of which even can be used for custom types, if the corresponding standard library traits are implemented by the type.  
+Literals represent the value of a type in the source code. There are several kinds of literals in *juice* that all have a default type they infer as, but many of which even can be used for custom types, if the corresponding standard library traits are implemented by the type.  
 Here are the most common literals:
 
 | Literal | Example | Default type | Corresponding Trait(s) |
@@ -178,7 +178,7 @@ By default, *juice* infers the type `Double`, representing a 64-bit floating poi
 #### Grammar of a Floating-Point Literal
 
 ```ebnf
-floating_point_literal = decimal_literal, floating_point_fraction, [ floating_point_exponent ];
+floating_point_literal = decimal_literal, floating_point_fraction, [ floating_point_exponent ]
                        | decimal_literal, floating_point_exponent;
 
 floating_point_fraction = ".", decimal_literal;
@@ -210,14 +210,14 @@ A string literal consists of a sequence of characters that are surrounded by dou
   """
   ```
 
-  In contrast to single-line string literals, multiline literals can contain cariage return and line feed characters, as well as unescaped double quotation marks. However, three consecutive unescaped double quotes and unescaped backslashes cannot be part of a multiline string literal for the same reasons.
+  In contrast to single-line string literals, multiline literals can contain carriage return and line feed characters, as well as unescaped double quotation marks. However, three consecutive unescaped double quotes and unescaped backslashes cannot be part of a multiline string literal for the same reasons.
 
   All carriage returns or combinations of carriage return and line feed are converted to just a line feed in a multiline literal. If it then immediately starts with a line feed, it will get stripped from the resulting string; the same also happens if it ends with a line feed.  
   All other line feed characters are kept in the resulting string, unless escaped by a backslash (`\`) at the end of a line.
 
   Multiline string literals can be indented using as many space and horizontal tab characters as you like. The indentation will get stripped from the beginning of each line. You can specify the stripped indentation by indenting the closing delimiter by the desired amount of spaces/tabs.
 
-  These rules ensure that all of the following literals result in the exact same string:
+  These rules ensure that all the following literals result in the exact same string:
 
   ```juice
   """
@@ -278,7 +278,7 @@ It works for multiline literals as well
 """#
 ```
 
- If you want to use an escape sequence inside of a raw string literal, you have to put the corresponding amount of number signs between the backslash and the rest of the sequence like this:
+ If you want to use an escape sequence inside a raw string literal, you have to put the corresponding amount of number signs between the backslash and the rest of the sequence like this:
 
 ```juice
 #"First line\#nSecond line"#
@@ -369,7 +369,7 @@ A character literal represents either an ASCII character or a Unicode scalar val
 
 Character literals support the same [escape sequences as string literals](#escape-sequences).
 
-By default, character literals are inferred to be of type `Char` that represents a 32-bit unicode scalar value. As with the other kinds of literals, custom types can be created from those literals as well, if they implement the `ExpressibleByCharacterLiteral` trait. The standard library, for example, defines another character type: `ASCIIChar`, a type representing the value of an ASCII character.
+By default, character literals are inferred to be of type `Char` that represents a 32-bit Unicode scalar value. As with the other kinds of literals, custom types can be created from those literals as well, if they implement the `ExpressibleByCharacterLiteral` trait. The standard library, for example, defines another character type: `ASCIIChar`, a type representing the value of an ASCII character.
 
 #### Grammar of a Character Literal
 

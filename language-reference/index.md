@@ -30,7 +30,7 @@ operator_character = "+" | "-" | "*" | "/" | "%" | "<" | ">"
                    | "=" | "&" | "|" | "^" | "!" | "?" | "~";
 ```
 
-Literal characters (also called **terminal symbols**) are written by enclosing them in double quotation marks. An `|` means that there is an alternative and the `,` concatenates terminal symbols and other non-terminal rules. E.g., an `operator` can either consist of `operator_characters`, or of a dot (`.`) followed by `dot_operator_characters`.
+Literal characters (also called **terminal symbols**) are written by enclosing them in double quotation marks. A vertical line character (`|`) means that there is an alternative and the `,` concatenates terminal symbols and other non-terminal rules. E.g., an `operator` can either consist of `operator_characters`, or of a dot (`.`) followed by `dot_operator_characters`.
 
 If some part of a production rule is enclosed in square brackets, that part is optional.
 
