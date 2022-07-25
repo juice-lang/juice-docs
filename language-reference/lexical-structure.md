@@ -1,3 +1,8 @@
+---
+title: Lexical Structure
+layout: page
+---
+
 # Lexical Structure
 
 The lexer of the *juice* programming language splits up a source file into sequences of characters, called **tokens**, that form the lexical structure of the language. It always tries to maximize the length of each token.  

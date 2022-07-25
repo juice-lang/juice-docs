@@ -1,3 +1,8 @@
+---
+title: Language Guide
+layout: page
+---
+
 # The *juice* Programming Language Guide
 
 In the future, the language guide will provide a simple and easy to follow intro for people new to the *juice* programming language. It will give a quick overview over most important programming concepts and how they are handled in *juice*.  

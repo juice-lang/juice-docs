@@ -1,3 +1,8 @@
+---
+title: Documentation
+layout: page
+---
+
 # The *juice* Programming Language Documentation
 
 Here you can find the official documentation of the *juice* programming language.  

@@ -1,3 +1,8 @@
+---
+title: Language Reference
+layout: page
+---
+
 # The *juice* Programming Language Reference
 
 This reference describes the lexical structure and syntax of the *juice* programming language. It defines the language as clearly as possible, while still providing some useful additional information, such that the language can be relatively easily understood and learned.
