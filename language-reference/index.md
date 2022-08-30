@@ -1,6 +1,7 @@
 ---
 title: Language Reference
 layout: page
+nav: docs
 ---
 
 # The *juice* Programming Language Reference

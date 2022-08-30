@@ -1,6 +1,7 @@
 ---
 title: Standard Library Reference
 layout: page
+nav: docs
 ---
 
 # The *juice* Standard Library Reference

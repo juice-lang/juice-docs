@@ -1,16 +1,17 @@
 ---
 title: Lexical Structure
 layout: page
+nav: docs
 ---
 
 # Lexical Structure
 
-The lexer of the *juice* programming language splits up a source file into sequences of characters, called **tokens**, that form the lexical structure of the language. It always tries to maximize the length of each token.  
+The lexer of the *juice* programming language splits up a source file into sequences of characters, called **tokens**, that form the lexical structure of the language. It always tries to maximize the length of each token.
 This document describes the categories of valid tokens.
 
 ## Whitespace and Comments
 
-*juice* mostly ignores whitespace and comment tokens, but they serve some purpose: whitespace separates other tokens in the source file; also, it is necessary in order to correctly parse operators.  
+*juice* mostly ignores whitespace and comment tokens, but they serve some purpose: whitespace separates other tokens in the source file; also, it is necessary in order to correctly parse operators.
 Whitespace consists of the following characters: space, newline, carriage return, horizontal and vertical tab, form feed, and the null character.
 
 Comment tokens are ignored by the compiler as well. There are single line comments, starting with `//` and terminated by a newline or a carriage return character, and multiline comments which start with `/*` and end with `*/`. The comment text of multiline comments can also contain other multiline comments, in this case the opening `/*`s and the closing `*/`s have to be balanced.
@@ -104,7 +105,7 @@ Here is a list containing all of *juice*'s keywords:
 
 ## Literals
 
-Literals represent the value of a type in the source code. There are several kinds of literals in *juice* that all have a default type they infer as, but many of which even can be used for custom types, if the corresponding standard library traits are implemented by the type.  
+Literals represent the value of a type in the source code. There are several kinds of literals in *juice* that all have a default type they infer as, but many of which even can be used for custom types, if the corresponding standard library traits are implemented by the type.
 Here are the most common literals:
 
 | Literal | Example | Default type | Corresponding Trait(s) |
@@ -131,7 +132,7 @@ nil_literal = "nil";
 
 ### Integer Literals
 
-Integer literals represent integers of arbitrary size. Normally, they are written using decimal digits, but by using the prefixes `0b`, `0o` or `0x`, you can also write binary, octal or hexadecimal integer literals accordingly.  
+Integer literals represent integers of arbitrary size. Normally, they are written using decimal digits, but by using the prefixes `0b`, `0o` or `0x`, you can also write binary, octal or hexadecimal integer literals accordingly.
 In an integer literal, you can group digits using `_` between them (e.g. as a thousands separator).
 
 The type of an integer literal is generally inferred to be an `Int`, unless you specify another type, implementing `ExpressibleByIntegerLiteral`. For example, all the other integer types in the standard library implement this trait.
@@ -169,8 +170,8 @@ hexadecimal_digit = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
 
 ### Floating-Point Literals
 
-A floating-point literal represents a floating-point value of unspecified precision.  
-It is written using decimal digits followed either by a decimal point (`.`) and decimal digits for the fractional part, or by an exponent, starting with `e` or `E`, followed by an optional sign (`+` or `-`) and decimal digits that indicate which power of ten the value preceding the exponent is multiplied with, or both.  
+A floating-point literal represents a floating-point value of unspecified precision.
+It is written using decimal digits followed either by a decimal point (`.`) and decimal digits for the fractional part, or by an exponent, starting with `e` or `E`, followed by an optional sign (`+` or `-`) and decimal digits that indicate which power of ten the value preceding the exponent is multiplied with, or both.
 As with integer literals, you can optionally group the digits of a floating point literal using `_` between digits.
 
 By default, *juice* infers the type `Double`, representing a 64-bit floating point number, for a floating-point literal, but any other type that implements `ExpressibleByFloatingPointLiteral` can be specified as well. The standard library defines another type, implementing this trait: `Float`, which represents a 32-bit floating-point number.
@@ -212,7 +213,7 @@ A string literal consists of a sequence of characters that are surrounded by dou
 
   In contrast to single-line string literals, multiline literals can contain carriage return and line feed characters, as well as unescaped double quotation marks. However, three consecutive unescaped double quotes and unescaped backslashes cannot be part of a multiline string literal for the same reasons.
 
-  All carriage returns or combinations of carriage return and line feed are converted to just a line feed in a multiline literal. If it then immediately starts with a line feed, it will get stripped from the resulting string; the same also happens if it ends with a line feed.  
+  All carriage returns or combinations of carriage return and line feed are converted to just a line feed in a multiline literal. If it then immediately starts with a line feed, it will get stripped from the resulting string; the same also happens if it ends with a line feed.
   All other line feed characters are kept in the resulting string, unless escaped by a backslash (`\`) at the end of a line.
 
   Multiline string literals can be indented using as many space and horizontal tab characters as you like. The indentation will get stripped from the beginning of each line. You can specify the stripped indentation by indenting the closing delimiter by the desired amount of spaces/tabs.
@@ -224,10 +225,10 @@ A string literal consists of a sequence of characters that are surrounded by dou
   Hello, world!
   This is a juice string!
   """
-  
+
   """Hello, world!
   This is a juice string!"""
-  
+
   """
       Hello, \
       world!
@@ -253,7 +254,7 @@ If you want to insert a special character into either a single-line or a multili
 
 #### String Interpolation
 
-Other values can be included into a string by using string interpolation. You can surround arbitrary expressions with `${...}` to include them in the resulting string.  
+Other values can be included into a string by using string interpolation. You can surround arbitrary expressions with `${...}` to include them in the resulting string.
 For example, the following string literals will produce the exact same string:
 
 ```juice

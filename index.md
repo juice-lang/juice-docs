@@ -1,11 +1,12 @@
 ---
 title: Documentation
 layout: page
+nav: docs
 ---
 
 # The *juice* Programming Language Documentation
 
-Here you can find the official documentation of the *juice* programming language.  
+Here you can find the official documentation of the *juice* programming language.
 
 It is subdivided into the following categories:
 
