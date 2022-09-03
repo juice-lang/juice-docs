@@ -2,6 +2,7 @@
 title: Compiler Documentation
 layout: page
 nav: docs
+no_toc: true
 ---
 
 # The *juice* Programming Language Compiler Documentation

@@ -2,6 +2,7 @@
 title: Standard Library Reference
 layout: page
 nav: docs
+no_toc: true
 ---
 
 # The *juice* Standard Library Reference
